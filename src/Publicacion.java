@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Publicacion {
@@ -9,7 +10,7 @@ public class Publicacion {
     public Publicacion(String titulo, int anio, List<Ejemplar> ejemplares, Genero genero) {
         this.titulo = titulo;
         this.anio = anio;
-        this.ejemplares = ejemplares;
+        this.ejemplares = new ArrayList<>();
         this.genero = genero;
     }
 
