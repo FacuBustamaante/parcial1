@@ -46,14 +46,12 @@ public class Usuario {
     }
 
     public void mostrarHistorialPrestamos(){
-
-    }
-    public void mostrarHistorialPrestamos(Prestamo prestamo){
-        if(prestamo.getLineas() != null){
-            for(LineaPrestamo lineaPrestamo : prestamo.getLineas()){
-                System.out.println(lineaPrestamo.getEjemplar().getPublicacion().getTitulo());
+        if(getPrestamos() != null){
+            for (Prestamo prestamos : prestamos){
+                System.out.println(prestamos.getLineas());
             }
         }
+        System.out.println("El usuario no tiene prestamos");
 
     }
 

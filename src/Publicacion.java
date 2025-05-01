@@ -46,15 +46,14 @@ public class Publicacion {
         this.genero = genero;
     }
 
-    public List<Ejemplar> getEjemplaresDisponibles(Publicacion publicacion){
-        if(publicacion.getEjemplares() != null){
-            for(Ejemplar ejemplar : publicacion.getEjemplares()){
-                if(ejemplar.estaDisponible(ejemplar)){
-                    return ejemplares;
-                }
+    public List<Ejemplar> getEjemplaresDisponibles(){
+        List<Ejemplar> ejemplaresDisponibles = new ArrayList<>();
+        for(Ejemplar ejemplar : this.ejemplares){
+            if(ejemplar.getEstado() == EstadoEjemplar.DISPONIBLE){
+                ejemplaresDisponibles.add(ejemplar);
             }
         }
-        return null;
+        return ejemplaresDisponibles;
     }
 
     @Override

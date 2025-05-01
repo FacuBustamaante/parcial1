@@ -33,11 +33,13 @@ public class Ejemplar {
         this.publicacion = publicacion;
     }
 
-    public boolean estaDisponible(Ejemplar ejemplar){
-        if (ejemplar.getEstado() == EstadoEjemplar.DISPONIBLE){
-            return true;
-        }
-        return false;
+    public boolean estaDisponible(){
+       if (estado == EstadoEjemplar.DISPONIBLE){
+           System.out.println("El ejemplar esta disponible");
+           return true;
+       }
+        System.out.println("El ejemplar no esta disponible");
+       return false;
     }
     @Override
     public String toString() {

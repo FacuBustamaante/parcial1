@@ -31,7 +31,7 @@ public class Main {
 
         //Ejemplares
         Ejemplar ejemplar1 = new Ejemplar("1", EstadoEjemplar.DISPONIBLE, libro1);
-        Ejemplar ejemplar2 = new Ejemplar("2", EstadoEjemplar.DISPONIBLE, libro1);
+        Ejemplar ejemplar2 = new Ejemplar("2", EstadoEjemplar.PRESTADO, libro1);
 
         //Revista
         Revista revista1 = new Revista("Revista 1", 2019, ejemplares, genero1, 1, 1);
@@ -41,8 +41,9 @@ public class Main {
         LineaPrestamo lineaPrestamo1 = new LineaPrestamo(new Date(2025/4/12), ejemplar1);
         lineas.add(lineaPrestamo1);
         Prestamo prestamo1 = new Prestamo(new Date(2025/4/12), new Date(2025/5/12), lineas);
-        Usuario usuario1 = new Usuario("Juan", "Perez", "1234567890", null);
+        Usuario usuario1 = new Usuario("Juan", "Perez", "1234567890", new ArrayList<>());
         biblioteca1.getUsuarios().add(usuario1);
+        usuario1.getPrestamos().add(prestamo1);
 
 
         ejemplares.add(ejemplar1);
@@ -51,6 +52,9 @@ public class Main {
         libro1.getEjemplares().add(ejemplar1);
         libro1.getEjemplares().add(ejemplar2);
 
-        System.out.println(biblioteca1);
+        ejemplar1.estaDisponible();
+        ejemplar2.estaDisponible();
+
+        usuario1.mostrarHistorialPrestamos();
     }
 }
